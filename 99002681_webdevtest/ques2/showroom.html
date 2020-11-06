@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Down</title>
+    <script>
+        var tv=new Array('LG', 'samsung', 'mi');
+        var mobile = new Array('iphone', 'samsung', 'sony');
+        var laptop = new Array('lenovo', 'sony', 'HP');
+
+        function validate(){
+            var name1=document.getElementById("dropdwn").value;
+ 
+            if(name1=="laptop"){
+                for(let i=0;i<laptop.length;i++)
+                    document.getElementById("divcat").innerHTML+=laptop[i]+'<br>';
+            }
+
+            if(name1=="mobile"){
+    // mobile.forEach((i, mobile) =>{
+    //     document.getElementById("divcat").innerHTML+=mobile[i]+'<br>';
+    // });
+                for(let i=0;i<mobile.length;i++)
+                    document.getElementById("divcat").innerHTML+=mobile[i]+'<br>';
+            }
+
+            if(name1=="tv"){
+                for(let i=0;i<tv.length;i++)
+                    document.getElementById("divcat").innerHTML+=tv[i]+'<br>';
+            }
+        }
+    </script>
+</head>
+<body>
+    <select name="dropdwn" id="dropdwn" onchange="validate()">
+        <option value="laptop">Laptop</option>
+        <option value="mobile">Mobile</option>
+        <option value="tv">TV</option>
+    </select>
+
+    <div id="divcat"></div>
+</body>
+</html>

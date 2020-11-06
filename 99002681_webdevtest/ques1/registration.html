@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <script>
+        function validate()
+        {
+            uname = document.getElementById('user');
+            upass = document.getElementById('pass');
+            uemail = document.getElementById('email');
+            uphone = document.getElementById('phone');
+            ucity = document.getElementById('city');
+
+            name = /^[a-zA-Z0-9]{5,15}$/;
+            passwd = /^[a-zA-Z0-9!@#$%^&*]+$/;
+            emailid = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+            phoneno = /^[0-9]{10}$/
+
+            if(uname.value==""){
+                alert("enter your name");
+                document.myform.username.focus();
+            }
+            else if(upass.value==""){
+                alert("enter your password");
+                document.myform.password.focus();
+            }
+            
+            if(uname.value.match(name))
+            {
+                alert("Valid username");
+            }
+            else
+                alert("Invalid username");
+            
+            if(upass.value.match(passwd))
+            {
+                alert("Valid password");
+            }
+            else
+                alert("Invalid password");
+            
+            if(uemail.value!="")
+            {
+                if(uemail.value.match(emailid))
+                    alert("Valid email ID");
+                else
+                    alert("Invalid email id");
+            }
+           
+            
+            if(uphone.value!="")
+            {
+                if(uphone.value.match(phoneno))
+                    alert("Valid phone number");
+                else
+                    alert("Invalid phone num");
+            }
+            
+        //     var names = ['anna79', 'jack876', 'ram854', 'raju8543'];
+        //     f = false;
+
+        //     for(i in names){
+        //     if(names[i] == uname)
+        //     {   
+        //         f = true;
+        //         break;
+        //     }
+
+
+        // if(f)
+        // {
+        //     alert("Choose a different name");
+        // }
+
+        // else{
+    
+        // }
+        }
+            
+
+    </script>
+</head>
+<body>
+    <form action="demo.html" method="GET" name="regform"><br>
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="user" id="user"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" name="pass" id="pass"></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td><input type="text" name="phone" id="phone"></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" name="city" id="city"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" value="Register" name="regButton" id="regButton" onclick="validate()"></td>
+            </tr>
+        </table>        
+    </form>
+</body>
+</html>
